@@ -8,7 +8,7 @@ var app = new Vue({
     errors:[]
   },
   methods: {
-    checkForm:function(e) {
+    checkForm (e) {
       if(this.titulo && this.descricao && this.link) return true;
       this.errors = [];
       if(!this.titulo) this.errors.push("Título está vazio.");
@@ -22,12 +22,12 @@ var app = new Vue({
         Descricao: this.descricao,
         Link: this.link
       })
-      .then(function (response) {
+      .then((response) => {
         console.log(response);
         alert('dados inseridos!');
         window.location = "/"
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.log(error);
         alert(error)
       });
