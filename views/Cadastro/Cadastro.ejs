@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../styles/Home.css">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/uikit/css/uikit.min.css">
 </head>
 <body>
     <div class="container-fluid">
@@ -13,20 +16,27 @@
     </div>
     <section id="app">
         <div class="container-fluid">
-             <form>
+             <form  @submit="checkForm" action="/something" method="post">
+                <p v-if="errors.length">
+                    <b>Favor verifique os campos abaixo</b>
+                    <ul>
+                        <li v-for="error in errors">{{ error }}</li>
+                    </ul>
+                </p>
                 <div class="form-group">
                     <label for="Titulo">Título</label>
-                    <input v-model="titulo" type="text" class="form-control" id="titulo" placeholder="insira o título" required>
+                    
+                    <input v-model="titulo" type="text" class="uk-input" id="titulo" placeholder="insira o título">
                 </div>
                 
                 <div class="form-group">
                     <label for="Descricao">Descricao</label>
-                    <textarea v-model="descricao" class="form-control" id="descricao" placeholder="descreva o que este bagulho faz"></textarea>
+                    <textarea v-model="descricao" class="uk-textarea" id="descricao" placeholder="descreva o que este bagulho faz"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="Link">Link</label>
-                    <input v-model="link" type="text" class="form-control" id="link" placeholder="Post o link do bagulho" required>
+                    <input v-model="link" type="text" class="uk-input" id="link" placeholder="Post o link do bagulho">
                 </div>
                 <div id="envio">
                     <button v-on:click="getValues" class="btn btn-success" >Salvar</button>

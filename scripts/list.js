@@ -6,9 +6,9 @@ var app = new Vue({
     },
     created() {
       axios.get(this.endpoint)
-        .then(function (response) {
+        .then((response) =>{
           this.posts = response.data
-          console.log('teste', this.posts)
+          console.log(response.data)
         })
         .catch(function (error) {
           console.log(error)
