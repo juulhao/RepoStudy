@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Home</title>
+</head>
+<body>
+    <div class="container-fluid">
+       <h1>Cadastro de Tarefas</h1>
+    </div>
+    <section id="app">
+        <div class="container-fluid">
+             <form>
+                <div class="form-group">
+                    <label for="Titulo">Título</label>
+                    <input v-model="titulo" type="text" class="form-control" id="titulo" placeholder="insira o título" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Descricao">Descricao</label>
+                    <textarea v-model="descricao" class="form-control" id="descricao" placeholder="descreva o que este bagulho faz"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="Link">Link</label>
+                    <input v-model="link" type="text" class="form-control" id="link" placeholder="Post o link do bagulho" required>
+                </div>
+                <div id="envio">
+                    <button v-on:click="getValues" class="btn btn-success" >Salvar</button>
+                    <button v-on:click="resetValues" class="btn btn-success" >Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../../scripts/insert.js"></script>
+</body>
+</html>

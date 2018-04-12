@@ -1,0 +1,19 @@
+{
+  "name": "repo-study",
+  "version": "1.0.0",
+  "description": "Repositorio de coisas legais em nodejs",
+  "main": "app.js",
+  "scripts": {
+    "start": "./node_modules/nodemon/bin/nodemon.js app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db": ".json-server --watch ./db/db.json"
+  },
+  "author": "Julio <juulhao@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.8",
+    "express": "^4.16.3",
+    "json-server": "^0.12.1",
+    "nodemon": "^1.17.3"
+  }
+}
